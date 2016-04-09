@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'model-msearch'
-  s.version     = '0.0.0'
+  s.version     = '0.0.1'
   s.date        = '2015-04-09'
   s.summary     = "msearch wrapper for Elasticsearch::Model"
   s.description = "msearch wrapper for Elasticsearch::Model"

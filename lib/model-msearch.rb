@@ -1,15 +1,17 @@
 module Elasticsearch
   module Model
     module ClassMethods
+      MSEARCH_VALID_HEADERS = [:index, :type, :search_type, :preference, :routing]
+
       def msearch!(payload)
         # Extract the search body.
         body = payload.map do |source|
-          __index_name    = source.klass.index_name
-          __document_type = source.klass.document_type
+          # Reformat the search definition into something Elastic will accept.
+          __headers = source.search.definition.slice(*MSEARCH_VALID_HEADERS)
+          __definition = source.search.definition.except(*MSEARCH_VALID_HEADERS)
+          __body = __definition.delete(:body)
 
-          # Extract the actual body from each search source.
-          [{index: __index_name, type: __document_type},
-           source.search.definition[:body]]
+          [__headers, __definition.merge(__body)]
         end
 
         # Elasticsearch expects the body to be sent in header\nbody format.
