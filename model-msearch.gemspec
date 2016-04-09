@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "msearch wrapper for Elasticsearch::Model"
   s.authors     = ["Liam P. White"]
   s.email       = 'example@example.com'
-  s.files       = ["lib/msearch-model.rb"]
+  s.files       = ["lib/model-msearch.rb"]
   s.homepage    = 'http://example.com'
   s.license     = 'MIT'
 
