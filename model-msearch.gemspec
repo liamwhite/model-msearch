@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'model-msearch'
-  s.version     = '0.0.1'
-  s.date        = '2015-04-09'
+  s.version     = '0.0.2'
+  s.date        = '2019-05-02'
   s.summary     = "msearch wrapper for Elasticsearch::Model"
   s.description = "msearch wrapper for Elasticsearch::Model"
   s.authors     = ["Liam P. White"]
@@ -10,6 +10,6 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://example.com'
   s.license     = 'MIT'
 
-  s.add_runtime_dependency 'elasticsearch-model', ['~> 0.1']
+  s.add_runtime_dependency 'elasticsearch-model'
 end
 
